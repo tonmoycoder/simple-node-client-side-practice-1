@@ -24,9 +24,9 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         const newUsers = [...users, data];
-        setUser(newUsers)
+        setUser(newUsers);
       });
     event.target.reset();
   };
@@ -39,13 +39,15 @@ function App() {
         <br /> <br />
         <input type="text" name="email" id="one" placeholder="email" />
         <br /> <br />
-        <button className='button' type="submit">add actress</button>
+        <button className="button" type="submit">
+          add actress
+        </button>
       </form>
       <h2 className="font_condensed">Total actress:{users.length}</h2>
       <div className="container_actress">
         {users.map((user) => (
-          <div className="font_sans details_actress" key={user.id}>
-            <p> Actress Name : {user.name}</p> <p> Actress E-mail : {user.email}</p>{' '}
+          <div className="font_sans details_actress" key={user._id}>
+            <p> Actress Name : {user.name}</p> <p> Actress E-mail : {user.email}</p>
           </div>
         ))}
       </div>
